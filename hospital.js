@@ -94,23 +94,28 @@ class Fila {
   }
 }
 
+// Criando a pilha e a fila
 const filaPacientes = new Fila();
 const pilhaProntuarios = new Pilha();
 
+// Utilizando o método "enfileirar" da classe "Fila" para adicionar pacientes 
 filaPacientes.enfileirar('Maria Eduarda Barbosa');
 filaPacientes.enfileirar('Stefanne Soares');
 filaPacientes.enfileirar('Matheus Ferreira');
 filaPacientes.enfileirar('Maria Vitória dos Santos');
 filaPacientes.enfileirar('Isabela Cabral');
 
+// Imprimindo o paciente seguinte utilizando o método "frente" da classe Fila
 console.log(`Próximo paciente: ${filaPacientes.frente()}`);
 
-for (let i = 0; i < 2; i++) {
-  const atendido = filaPacientes.desenfileirar();
+// Loop que simula o atendimento de dois pacientes
+for (let i = 0; i < 2; i++) { // Roda duas vezes 
+  const atendido = filaPacientes.desenfileirar(); // Remove o primeiro paciente da fila
   if (atendido) {
-    pilhaProntuarios.empilhar(atendido);
+    pilhaProntuarios.empilhar(atendido); // Adiciona na pilha
   }
 }
 
+// Utilizando os métodos das respectivas classes para imprimir
 filaPacientes.imprimir();
 pilhaProntuarios.imprimir();
